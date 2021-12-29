@@ -11,6 +11,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.17.4
+  fluro: ^2.0.3
+  material: ^1.0.0+2
+  wiredash: ^0.7.0+1
+  flutter_statusbarcolor_ns: ^0.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
