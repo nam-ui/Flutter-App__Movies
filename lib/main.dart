@@ -1,33 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:wiredash/wiredash.dart';
 
-void main() => runApp(MyApp());
+import 'config_app.dart';
+import 'routes/app_pages.dart';
+import 'routes/app_routes.dart';
+import 'screen/components/nav_bar/navigation_bottom.dart';
+import 'utils/wire_dash/constants.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  AppPages.setupRouter();
+  runApp(MyApp());
 }
 
-class MyHomePage extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final title = "Flutter Movie";
+  late Locale _locale;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: FlatButton(
-          child: Text('show snackbar'),
-          color: Colors.pink,
-          onPressed: () {
-            // xử lý show snackbar khi click
-            final snackBar = SnackBar(
-                content: Text(
-                    'Không thể truy cập bài viết này vì thấy hay mà không vote'));
-            Scaffold.of(context).showSnackBar(snackBar);
-          },
-        ),
+    return Wiredash(
+      secret: Constants.secr,
+      projectId: Constants.proj,
+      navigatorKey: Constants.navigatorKey,
+      child: MaterialApp(
+        navigatorKey: Constants.navigatorKey,
+        theme: ThemeData(fontFamily: 'notoSerif'),
+        title: title,
+        onGenerateRoute: AppPages.router.generator,
+        initialRoute: AppRoutes.HOME,
+        supportedLocales: supportedLocales,
+        locale: _locale,
+        debugShowCheckedModeBanner: false,
+        home: NavigationBottom(),
       ),
-    );
+    ); // Wiredash Home
   }
 }
