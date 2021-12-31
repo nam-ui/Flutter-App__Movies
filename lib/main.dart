@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wiredash/wiredash.dart';
 
-import 'config_app.dart';
 import 'routes/app_pages.dart';
 import 'routes/app_routes.dart';
 import 'screen/components/nav_bar/navigation_bottom.dart';
@@ -43,7 +42,7 @@ class _MyAppState extends State<MyApp> {
               onGenerateRoute: AppPages.router.generator,
               initialRoute: AppRoutes.HOME,
               debugShowCheckedModeBanner: false,
-              home: NavigationBottom(),
+              home: const NavigationBottom(),
             ));
       },
     ); // Wiredash Home

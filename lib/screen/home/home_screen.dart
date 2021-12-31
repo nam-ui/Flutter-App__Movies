@@ -9,20 +9,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return StreamBuilder<Color>(builder: (context, snapshot) {
       return DelayedDisplay(
-        delay: Duration(seconds: 1),
+        delay: Duration(milliseconds: 500),
         child: Scaffold(
           backgroundColor: snapshot.data,
-          body: Center(
-            child: Text(
-              'Hello World',
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-              ),
-            ),
+          appBar: AppBar(
+            title: Text('Delayed Display'),
           ),
         ),
       );

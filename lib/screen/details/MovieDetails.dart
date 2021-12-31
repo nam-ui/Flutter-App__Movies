@@ -1,3 +1,4 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 
 class MovieDetails extends StatefulWidget {
@@ -9,17 +10,16 @@ class MovieDetails extends StatefulWidget {
 class _MovieDetailsState extends State<MovieDetails> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: FlatButton(
-          child: Text('show snackbar'),
-          color: Colors.pink,
-          onPressed: () {
-            final snackBar = SnackBar(content: Text('MovieDetail'));
-            Scaffold.of(context).showSnackBar(snackBar);
-          },
+    return StreamBuilder<Color>(builder: (context, snapshot) {
+      return DelayedDisplay(
+        delay: Duration(milliseconds: 500),
+        child: Scaffold(
+          backgroundColor: snapshot.data,
+          appBar: AppBar(
+            title: Text('Delayed Display Deltail'),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
