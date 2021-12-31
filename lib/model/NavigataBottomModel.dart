@@ -1,5 +1,5 @@
 class NavigataBottomModel {
-  int icon = 0;
+  dynamic icon = 0;
   String title = "Home";
 
   NavigataBottomModel(

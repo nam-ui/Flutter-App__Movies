@@ -15,9 +15,10 @@ class _NavigationBottomState extends State<NavigationBottom> {
   PageController _pageController = PageController();
   final _widgetOptions = [const Home(), const MovieDetails(), const Account()];
   final List<NavigataBottomModel> titles = [
-    NavigataBottomModel(11, "Home"),
-    NavigataBottomModel(11, "Home"),
-    NavigataBottomModel(11, "Home"),
+    NavigataBottomModel(IconData(0xe318, fontFamily: 'MaterialIcons'), "Home"),
+    NavigataBottomModel(IconData(0xf37f, fontFamily: 'MaterialIcons'), "Cart"),
+    NavigataBottomModel(
+        IconData(0xf402, fontFamily: 'MaterialIcons'), "Account"),
   ];
 
   @override
@@ -39,11 +40,11 @@ class _NavigationBottomState extends State<NavigationBottom> {
             return BubbleBottomBarItem(
                 backgroundColor: Colors.red,
                 icon: Icon(
-                  Icons.dashboard,
+                  title.icon,
                   color: Colors.black,
                 ),
                 activeIcon: Icon(
-                  Icons.dashboard,
+                  title.icon,
                   color: Colors.red,
                 ),
                 title: Text(title.title));
