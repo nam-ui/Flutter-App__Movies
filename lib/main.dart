@@ -42,7 +42,6 @@ class _MyAppState extends State<MyApp> {
               title: title,
               onGenerateRoute: AppPages.router.generator,
               initialRoute: AppRoutes.HOME,
-              supportedLocales: supportedLocales,
               debugShowCheckedModeBanner: false,
               home: NavigationBottom(),
             ));

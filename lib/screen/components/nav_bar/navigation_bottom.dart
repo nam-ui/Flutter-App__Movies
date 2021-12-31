@@ -31,7 +31,19 @@ class _NavigationBottomState extends State<NavigationBottom> {
         ),
         bottomNavigationBar: BubbleBottomBar(
           opacity: .2,
-          items: [],
+          items: _widgetOptions.map((item) {
+            return const BubbleBottomBarItem(
+                backgroundColor: Colors.red,
+                icon: Icon(
+                  Icons.dashboard,
+                  color: Colors.black,
+                ),
+                activeIcon: Icon(
+                  Icons.dashboard,
+                  color: Colors.red,
+                ),
+                title: Text("Home"));
+          }).toList(),
         ),
       );
     });

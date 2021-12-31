@@ -9,8 +9,6 @@ wiredashThemeData(color) {
   return wiredashThemeData;
 }
 
-final supportedLocales = [Locale('ja', 'JA'), Locale('vi', 'VN')];
-
 Locale localeResolutionCallback(
     Iterable<Locale> supportedLocales, Locale deviceLocate) {
   for (final Locale locale in supportedLocales) {
