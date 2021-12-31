@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
+import 'package:movie_super/model/NavigataBottomModel.dart';
 
 import 'package:movie_super/screen/details/MovieDetails.dart';
 import '../../accounts/Accounts.dart';
@@ -12,14 +13,17 @@ class NavigationBottom extends StatefulWidget {
 
 class _NavigationBottomState extends State<NavigationBottom> {
   PageController _pageController = PageController();
-
   final _widgetOptions = [const Home(), const MovieDetails(), const Account()];
+  final List<NavigataBottomModel> titles = [
+    NavigataBottomModel(11, "Home"),
+    NavigataBottomModel(11, "Home"),
+    NavigataBottomModel(11, "Home"),
+  ];
 
   @override
   Widget build(BuildContext context) {
     _pageController =
         PageController(initialPage: 0, keepPage: false, viewportFraction: 1.0);
-
     return StreamBuilder<Color>(builder: (context, snapshot) {
       return Scaffold(
         body: NotificationListener<ScrollNotification>(
@@ -31,8 +35,8 @@ class _NavigationBottomState extends State<NavigationBottom> {
         ),
         bottomNavigationBar: BubbleBottomBar(
           opacity: .2,
-          items: _widgetOptions.map((item) {
-            return const BubbleBottomBarItem(
+          items: titles.map((title) {
+            return BubbleBottomBarItem(
                 backgroundColor: Colors.red,
                 icon: Icon(
                   Icons.dashboard,
@@ -42,7 +46,7 @@ class _NavigationBottomState extends State<NavigationBottom> {
                   Icons.dashboard,
                   color: Colors.red,
                 ),
-                title: Text("Home"));
+                title: Text(title.title));
           }).toList(),
         ),
       );
