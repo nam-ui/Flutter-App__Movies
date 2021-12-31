@@ -3,25 +3,22 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 import '../screen/accounts/Accounts.dart';
+import '../screen/details/MovieDetails.dart';
 import 'app_routes.dart';
 
 class AppPages {
   static FluroRouter router = FluroRouter();
 
-  // ignore: prefer_final_fields
-  static Handler _home = Handler(
-      handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
-          MyApp());
+  static Handler _home =
+      Handler(handlerFunc: (context, Map<String, dynamic> params) {
+    return MyApp();
+  });
 
-  // ignore: prefer_final_fields
-  static Handler _account = Handler(
-      handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
-          MyApp());
+  static Handler _account =
+      Handler(handlerFunc: (context, Map<String, dynamic> params) => Account());
 
-  // ignore: prefer_final_fields
   static final Handler _movieDetail = Handler(
-      handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
-          Account());
+      handlerFunc: (context, Map<String, dynamic> params) => MovieDetails());
 
   static void setupRouter() {
     router.define(AppRoutes.HOME, handler: _home);

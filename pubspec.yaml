@@ -15,6 +15,7 @@ dependencies:
   material: ^1.0.0+2
   wiredash: ^0.7.0+1
   flutter_statusbarcolor_ns: ^0.4.0
+  bubble_bottom_bar: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
