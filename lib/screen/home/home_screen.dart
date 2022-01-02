@@ -27,26 +27,59 @@ class _HomeState extends State<Home> {
             color: Colors.transparent,
             child: buildHeader(),
           ),
+          body: Container(),
         ),
       );
     });
   }
 
+// Header home icon_menu + search icon
   Widget buildHeader() {
+    var children2 = <Widget>[
+      const Text(
+        "Movie Plus",
+        textAlign: TextAlign.justify,
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+      ),
+    ];
     return Row(
       children: <Widget>[
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            padding: const EdgeInsets.only(
+              left: 7.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    IconButton(
+                      padding: const EdgeInsets.only(left: 0.0),
+                      icon: Image.asset("assets/images/logo_assets.png"),
+                      onPressed: () {},
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.only(
+                          left: 7.0,
+                        ),
+                        child: Row(children: children2)),
+                  ],
+                ),
                 IconButton(
-                  icon: Image.asset("assets/images/logo.png"),
-                  onPressed: () {
-                    setState(() {});
-                  },
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 5),
+                  iconSize: 40,
+                  onPressed: () async {},
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),

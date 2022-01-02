@@ -1,6 +1,6 @@
 name: movie_super
 description: A new Flutter project.
-# 
+#
 publish_to: "none"
 version: 1.0.0+1
 environment:
@@ -33,8 +33,8 @@ flutter_icons:
 # FRONT AND IMAGES
 flutter:
   uses-material-design: true
-  # assets:
-    # - images/logo-app.png
+  assets:
+    - assets/images/
     # -
   # fonts:
   #   - family: Schyler
@@ -43,4 +43,3 @@ flutter:
   #       - asset: fonts/SawarabiMincho-Regular.ttf
   #         style: italic
   #   - family: Sawarabi Mincho Regular
-
