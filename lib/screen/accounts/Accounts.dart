@@ -16,7 +16,7 @@ class _AccountState extends State<Account> {
         child: Scaffold(
           backgroundColor: snapshot.data,
           appBar: AppBar(
-            title: Text('Delayed Display Account'),
+            title: Text('Movie Plus'),
           ),
         ),
       );
